@@ -28,5 +28,13 @@ namespace R5T.D0009.D0003
             var processStartTimeDirectoryName = await this.TimestampUtcDirectoryNameProvider.GetTimestampUtcDirectoryNameAsync(processStartTime);
             return processStartTimeDirectoryName;
         }
+
+        public async Task<string> GetProcessStartTimeUtcDirectoryName()
+        {
+            var processStartTimeUtc = await this.ProcessStartTimeProvider.GetProcessStartTimeUtcAsync();
+
+            var processStartTimeUtcDirectoryName = await this.TimestampUtcDirectoryNameProvider.GetTimestampUtcDirectoryNameAsync(processStartTimeUtc);
+            return processStartTimeUtcDirectoryName;
+        }
     }
 }
